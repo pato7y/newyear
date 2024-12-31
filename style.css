@@ -1,0 +1,275 @@
+/* Overall Body Styling */
+body {
+  text-align: center;
+  background-color: #1e3d58;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Hide overflow to make snowflakes not go outside the screen */
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Header */
+h1 {
+  font-size: 3em;
+  margin-top: 50px;
+}
+
+/* Christmas Tree Image Styling */
+.christmas-tree-image {
+  width: 300px; /* Adjust the size of your image */
+  margin-top: 20px;
+  display: block; /* Ensures the image is block-level and centers properly */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button Styling */
+.play-button {
+  background-color: #FFD700; /* Golden color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.play-button:hover {
+  background-color: #FFCC00;
+}
+
+/* Countdown Styling */
+#countdown {
+  margin-top: 30px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Personalized New Year Message */
+.personalized-message {
+  font-size: 2em;
+  font-weight: bold;
+  color: #FFD700; /* Golden color */
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Snowflake Styling */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: snowfall 5s linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    top: -10px;
+    left: calc(100% * var(--random-x));
+    opacity: 0.8;
+  }
+  100% {
+    top: 100vh;
+    left: calc(100% * var(--random-x));
+    opacity: 0.6;
+  }
+}
+
+/* Snowman Styling */
+.snowman {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Snowman - Left Corner */
+.snowman.left {
+  left: 20px; /* Positioned in the left corner */
+}
+
+/* Snowman - Right Corner */
+.snowman.right {
+  right: 20px; /* Positioned in the right corner */
+}
+
+/* Snowman Body */
+.snowman-body {
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Snowman Head */
+.snowman-head {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Snowman Hat */
+.snowman-hat {
+  width: 120px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.snowman-hat::after {
+  content: '';
+  width: 50px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Snowman Eyes */
+.snowman-eyes {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+}
+
+.snowman-eye {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+/* Christmas Tree Styling */
+.tree {
+  position: absolute;
+  bottom: 20px;
+  width: 100px;
+  height: auto;
+}
+
+/* Christmas Tree - Left Tree */
+.tree.left-tree {
+  left: 100px;
+  z-index: 2;
+}
+
+/* Christmas Tree - Right Tree */
+.tree.right-tree {
+  right: 100px;
+  z-index: 2;
+}
+
+/* Tree Body (The Triangular Shape) */
+.tree-body {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid green;
+  margin-bottom: 5px;
+  animation: growTree 2s ease-in-out;
+}
+
+.tree-body:before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: -50px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 80px solid green;
+  animation: growTree 2s 0.5s ease-in-out;
+}
+
+.tree-body:after {
+  content: '';
+  position: absolute;
+  top: -70px;
+  left: -50px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 60px solid green;
+  animation: growTree 2s 1s ease-in-out;
+}
+
+/* Tree Trunk */
+.tree-trunk {
+  width: 20px;
+  height: 40px;
+  background-color: brown;
+  margin-top: -20px;
+  margin-left: -10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Tree Decorations (Twinkling Lights) */
+.tree-decorations {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tree-light {
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 1s infinite alternate;
+}
+
+.tree-light:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes growTree {
+   0% { 
+     width: 0; 
+     height: 0; 
+   }
+   100% { 
+     width: 100px; 
+     height: 150px; 
+   }
+}
